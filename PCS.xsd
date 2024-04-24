@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://iec.ch/TC57/2007/PCS#"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://iec.ch/TC57/2007/PCS#"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation/>
+   <xs:element name="PCS" type="m:PCS"/>
+   <xs:complexType name="PCS">
+      <xs:sequence>
+         <xs:element name="ConductingEquipment"
+                     type="m:ConductingEquipment"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="EnergyConsumer"
+                     type="m:EnergyConsumer"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="PowerElectronicsConnection"
+                     type="m:PowerElectronicsConnection"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="RegulatingControl"
+                     type="m:RegulatingControl"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="RotatingMachine"
+                     type="m:RotatingMachine"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BaseVoltage"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#BaseVoltage">
+      <xs:annotation>
+         <xs:documentation>Defines a system base voltage which is referenced.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="ConductingEquipment"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment">
+      <xs:annotation>
+         <xs:documentation>The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="BaseVoltage"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:BaseVoltage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.BaseVoltage">
+            <xs:annotation>
+               <xs:documentation>Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GroundingAction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GroundAction"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.GroundingAction">
+            <xs:annotation>
+               <xs:documentation>Action involving grounding operation on this conducting equipment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="JumpingAction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:JumperAction"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.JumpingAction">
+            <xs:annotation>
+               <xs:documentation>Jumper action involving jumping operation on this conducting equipment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Outage"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Outage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ConductingEquipment.Outage">
+            <xs:annotation>
+               <xs:documentation>The outage that is isolated by the outage isolation equipment.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EnergyConsumer"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer">
+      <xs:annotation>
+         <xs:documentation>Generic user of energy - a  point of consumption on the power system model.</xs:documentation>
+         <xs:documentation>EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="customerCount"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.customerCount">
+            <xs:annotation>
+               <xs:documentation>Number of individual customers represented by this demand.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="grounded"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.grounded">
+            <xs:annotation>
+               <xs:documentation>Used for Yn and Zn connections. True if the neutral is solidly grounded.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="p"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.p">
+            <xs:annotation>
+               <xs:documentation>Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+               <xs:documentation>For voltage dependent loads the value is at rated voltage.</xs:documentation>
+               <xs:documentation>Starting value for a steady state solution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="pfixed"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.pfixed">
+            <xs:annotation>
+               <xs:documentation>Active power of the load that is a fixed quantity and does not vary as load group value varies. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="pfixedPct"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.pfixedPct">
+            <xs:annotation>
+               <xs:documentation>Fixed active power as a percentage of load group fixed active power. Used to represent the time-varying components.  Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="phaseConnection"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PhaseShuntConnectionKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.phaseConnection">
+            <xs:annotation>
+               <xs:documentation>The type of phase connection, such as wye or delta.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="q"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ReactivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.q">
+            <xs:annotation>
+               <xs:documentation>Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+               <xs:documentation>For voltage dependent loads the value is at rated voltage.</xs:documentation>
+               <xs:documentation>Starting value for a steady state solution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="qfixed"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ReactivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.qfixed">
+            <xs:annotation>
+               <xs:documentation>Reactive power of the load that is a fixed quantity and does not vary as load group value varies. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="qfixedPct"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.qfixedPct">
+            <xs:annotation>
+               <xs:documentation>Fixed reactive power as a percentage of load group fixed reactive power. Used to represent the time-varying components.  Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="EnergyConsumerAction"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:EnergyConsumerAction"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.EnergyConsumerAction">
+            <xs:annotation>
+               <xs:documentation>The energy consumer action that is performed on the energy consumer</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="LoadDynamics"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:LoadDynamics"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.LoadDynamics">
+            <xs:annotation>
+               <xs:documentation>Load dynamics model used to describe dynamic behaviour of this energy consumer.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="LoadResponse"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:LoadResponseCharacteristic"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.LoadResponse">
+            <xs:annotation>
+               <xs:documentation>The load response characteristic of this load.  If missing, this load is assumed to be constant power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PowerCutZone"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PowerCutZone"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumer.PowerCutZone">
+            <xs:annotation>
+               <xs:documentation>The  energy consumer is assigned to this power cut zone.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EnergyConsumerAction"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EnergyConsumerAction">
+      <xs:annotation>
+         <xs:documentation>Action to connect or disconnect the Energy Consumer from its Terminal</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="GeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="GroundAction"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GroundAction">
+      <xs:annotation>
+         <xs:documentation>Action on ground as a switching step.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="HydroPump"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump">
+      <xs:annotation>
+         <xs:documentation>A synchronous motor-driven pump, typically associated with a pumped storage plant.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="JumperAction"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#JumperAction">
+      <xs:annotation>
+         <xs:documentation>Action on jumper as a switching step.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="LoadDynamics"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#LoadDynamics">
+      <xs:annotation>
+         <xs:documentation>Load whose behaviour is described by reference to a standard model &lt;font color="#0f0f0f"&gt;or by definition of a user-defined model.&lt;/font&gt;</xs:documentation>
+         <xs:documentation>A standard feature of dynamic load behaviour modelling is the ability to associate the same behaviour to multiple energy consumers by means of a single load definition.  The load model is always applied to individual bus loads (energy consumers).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="LoadResponseCharacteristic"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#LoadResponseCharacteristic">
+      <xs:annotation>
+         <xs:documentation>Models the characteristic response of the load demand due to changes in system conditions such as voltage and frequency. It is not related to demand response.</xs:documentation>
+         <xs:documentation>If LoadResponseCharacteristic.exponentModel is True, the exponential voltage or frequency dependent models are specified and used as to calculate active and reactive power components of the load model.</xs:documentation>
+         <xs:documentation>The equations to calculate active and reactive power components of the load model are internal to the power flow calculation, hence they use different quantities depending on the use case of the data exchange.</xs:documentation>
+         <xs:documentation>The equations for exponential voltage dependent load model injected power are:</xs:documentation>
+         <xs:documentation>pInjection= Pnominal* (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent</xs:documentation>
+         <xs:documentation>qInjection= Qnominal* (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.qVoltageExponent</xs:documentation>
+         <xs:documentation>Where:</xs:documentation>
+         <xs:documentation>1) * means "multiply" and ** is "raised to power of";</xs:documentation>
+         <xs:documentation>2) Pnominal and Qnominal represent the active power and reactive power at nominal voltage as any load described by the voltage exponential model shall be given at nominal voltage.  This means that EnergyConsumer.p and EnergyConsumer.q  are at nominal voltage.</xs:documentation>
+         <xs:documentation>3) After power flow is solved:</xs:documentation>
+         <xs:documentation>-pInjection and qInjection correspond to SvPowerflow.p and SvPowerflow.q respectively.</xs:documentation>
+         <xs:documentation>- Voltage corresponds to SvVoltage.v at the TopologicalNode where the load is connected.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="Outage" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Outage">
+      <xs:annotation>
+         <xs:documentation>Document describing details of an active or planned outage in a part of the electrical network.</xs:documentation>
+         <xs:documentation>A non-planned outage may be created upon:</xs:documentation>
+         <xs:documentation>- a breaker trip,</xs:documentation>
+         <xs:documentation>- a fault indicator status change,</xs:documentation>
+         <xs:documentation>- a meter event indicating customer outage,</xs:documentation>
+         <xs:documentation>- a reception of one or more customer trouble calls, or</xs:documentation>
+         <xs:documentation>- an operator command, reflecting information obtained from the field crew.</xs:documentation>
+         <xs:documentation>Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</xs:documentation>
+         <xs:documentation>A planned outage may be created upon:</xs:documentation>
+         <xs:documentation>- a request for service, maintenance or construction work in the field, or</xs:documentation>
+         <xs:documentation>- an operator-defined outage for what-if/contingency network analysis.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="PhaseCode"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PhaseCode">
+      <xs:annotation>
+         <xs:documentation>An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.</xs:documentation>
+         <xs:documentation>Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.</xs:documentation>
+         <xs:documentation>The integer values are from IEC 61968-9 to support revenue metering applications.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="A">
+            <xs:annotation>
+               <xs:documentation>Phase A.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AB">
+            <xs:annotation>
+               <xs:documentation>Phases A and B.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABC">
+            <xs:annotation>
+               <xs:documentation>Phases A, B, and C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABCN">
+            <xs:annotation>
+               <xs:documentation>Phases A, B, C, and N.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ABN">
+            <xs:annotation>
+               <xs:documentation>Phases A, B, and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AC">
+            <xs:annotation>
+               <xs:documentation>Phases A and C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="ACN">
+            <xs:annotation>
+               <xs:documentation>Phases A, C and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="AN">
+            <xs:annotation>
+               <xs:documentation>Phases A and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="B">
+            <xs:annotation>
+               <xs:documentation>Phase B.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BC">
+            <xs:annotation>
+               <xs:documentation>Phases B and C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BCN">
+            <xs:annotation>
+               <xs:documentation>Phases B, C, and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="BN">
+            <xs:annotation>
+               <xs:documentation>Phases B and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="C">
+            <xs:annotation>
+               <xs:documentation>Phase C.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="CN">
+            <xs:annotation>
+               <xs:documentation>Phases C and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="N">
+            <xs:annotation>
+               <xs:documentation>Neutral phase.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="X">
+            <xs:annotation>
+               <xs:documentation>Unknown non-neutral phase.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="XN">
+            <xs:annotation>
+               <xs:documentation>Unknown non-neutral phase plus neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="XY">
+            <xs:annotation>
+               <xs:documentation>Two unknown non-neutral phases.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="XYN">
+            <xs:annotation>
+               <xs:documentation>Two unknown non-neutral phases plus neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="none">
+            <xs:annotation>
+               <xs:documentation>No phases specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s1">
+            <xs:annotation>
+               <xs:documentation>Secondary phase 1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s12">
+            <xs:annotation>
+               <xs:documentation>Secondary phase 1 and 2.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s12N">
+            <xs:annotation>
+               <xs:documentation>Secondary phases 1, 2, and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s1N">
+            <xs:annotation>
+               <xs:documentation>Secondary phase 1 and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s2">
+            <xs:annotation>
+               <xs:documentation>Secondary phase 2.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="s2N">
+            <xs:annotation>
+               <xs:documentation>Secondary phase 2 and neutral.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="PhaseShuntConnectionKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PhaseShuntConnectionKind">
+      <xs:annotation>
+         <xs:documentation>The configuration of phase connections for a single terminal device such as a load or capacitor.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="D">
+            <xs:annotation>
+               <xs:documentation>Delta connection.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="G">
+            <xs:annotation>
+               <xs:documentation>Ground connection; use when explicit connection to ground needs to be expressed in combination with the phase code, such as for electrical wire/cable or for meters.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="I">
+            <xs:annotation>
+               <xs:documentation>Independent winding, for single-phase connections.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Y">
+            <xs:annotation>
+               <xs:documentation>Wye connection.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Yn">
+            <xs:annotation>
+               <xs:documentation>Wye, with neutral brought out for grounding.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="PowerCutZone"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerCutZone">
+      <xs:annotation>
+         <xs:documentation>An area or zone of the power system which is used for load shedding purposes.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="PowerElectronicsConnection"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection">
+      <xs:annotation>
+         <xs:documentation>A connection to the AC network for energy production or consumption that uses power electronics rather than rotating machines.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="maxIFault"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PU"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.maxIFault">
+            <xs:annotation>
+               <xs:documentation>Maximum fault current this device will contribute, in per-unit of rated current, before the converter protection will trip or bypass.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="maxQ"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ReactivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.maxQ">
+            <xs:annotation>
+               <xs:documentation>Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minQ"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ReactivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.minQ">
+            <xs:annotation>
+               <xs:documentation>Minimum reactive power limit for the unit. This is the minimum (nameplate) limit for the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="p"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.p">
+            <xs:annotation>
+               <xs:documentation>Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+               <xs:documentation>Starting value for a steady state solution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="q"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ReactivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.q">
+            <xs:annotation>
+               <xs:documentation>Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+               <xs:documentation>Starting value for a steady state solution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="r"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Resistance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.r">
+            <xs:annotation>
+               <xs:documentation>Equivalent resistance (RG) of generator. RG is considered for the calculation of all currents, except for the calculation of the peak current ip. Used for short circuit data exchange according to IEC 60909.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="r0"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Resistance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.r0">
+            <xs:annotation>
+               <xs:documentation>Zero sequence resistance of the synchronous machine.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedS"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ApparentPower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.ratedS">
+            <xs:annotation>
+               <xs:documentation>Nameplate apparent power rating for the unit.</xs:documentation>
+               <xs:documentation>The attribute shall have a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedU"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Voltage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.ratedU">
+            <xs:annotation>
+               <xs:documentation>Rated voltage (nameplate data, Ur in IEC 60909-0). It is primarily used for short circuit data exchange according to IEC 60909.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="rn"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Resistance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.rn">
+            <xs:annotation>
+               <xs:documentation>Negative sequence Thevenin resistance.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="x"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reactance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.x">
+            <xs:annotation>
+               <xs:documentation>Positive sequence Thevenin reactance.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="x0"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reactance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.x0">
+            <xs:annotation>
+               <xs:documentation>Zero sequence Thevenin reactance.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="xn"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reactance"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.xn">
+            <xs:annotation>
+               <xs:documentation>Negative sequence Thevenin reactance.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="WindTurbineType3or4Dynamics"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WindTurbineType3or4Dynamics"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection.WindTurbineType3or4Dynamics">
+            <xs:annotation>
+               <xs:documentation>The wind turbine type 3 or type 4 dynamics model associated with this power electronics connection.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="RegulatingControl"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl">
+      <xs:annotation>
+         <xs:documentation>Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.</xs:documentation>
+         <xs:documentation>Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.</xs:documentation>
+         <xs:documentation>The specified terminal shall be associated with the connectivity node of the controlled point.  The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.</xs:documentation>
+         <xs:documentation>For flow control, load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.</xs:documentation>
+         <xs:documentation>The attribute minAllowedTargetValue and maxAllowedTargetValue are required in the following cases:</xs:documentation>
+         <xs:documentation>- For a power generating module operated in power factor control mode to specify maximum and minimum power factor values;</xs:documentation>
+         <xs:documentation>- Whenever it is necessary to have an off center target voltage for the tap changer regulator. For instance, due to long cables to off shore wind farms and the need to have a simpler setup at the off shore transformer platform, the voltage is controlled from the land at the connection point for the off shore wind farm. Since there usually is a voltage rise along the cable, there is typical and overvoltage of up 3-4 kV compared to the on shore station. Thus in normal operation the tap changer on the on shore station is operated with a target set point, which is in the lower parts of the dead band.</xs:documentation>
+         <xs:documentation>The attributes minAllowedTargetValue and maxAllowedTargetValue are not related to the attribute targetDeadband and thus they are not treated as an alternative of the targetDeadband. They are needed due to limitations in the local substation controller. The attribute targetDeadband is used to prevent the power flow from move the tap position in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue and maxAllowedTargetValue.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="discrete"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.discrete">
+            <xs:annotation>
+               <xs:documentation>The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="enabled"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.enabled">
+            <xs:annotation>
+               <xs:documentation>The flag tells if regulation is enabled.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="maxAllowedTargetValue"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.maxAllowedTargetValue">
+            <xs:annotation>
+               <xs:documentation>Maximum allowed target value (RegulatingControl.targetValue).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minAllowedTargetValue"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.minAllowedTargetValue">
+            <xs:annotation>
+               <xs:documentation>Minimum allowed target value (RegulatingControl.targetValue).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="mode"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:RegulatingControlModeKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.mode">
+            <xs:annotation>
+               <xs:documentation>The regulating control mode presently available.  This specification allows for determining the kind of regulation without need for obtaining the units from a schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="monitoredPhase"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PhaseCode"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.monitoredPhase">
+            <xs:annotation>
+               <xs:documentation>Phase voltage controlling this regulator, measured at regulator location.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="targetDeadband"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.targetDeadband">
+            <xs:annotation>
+               <xs:documentation>This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to "false", the RegulatingControl.targetDeadband is to be ignored.</xs:documentation>
+               <xs:documentation>Note that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="targetValue"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.targetValue">
+            <xs:annotation>
+               <xs:documentation>The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="targetValueUnitMultiplier"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:UnitMultiplier"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.targetValueUnitMultiplier">
+            <xs:annotation>
+               <xs:documentation>Specify the multiplier for used for the targetValue.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Terminal"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Terminal"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControl.Terminal">
+            <xs:annotation>
+               <xs:documentation>The terminal associated with this regulating control.  The terminal is associated instead of a node, since the terminal could connect into either a topological node or a connectivity node.  Sometimes it is useful to model regulation at a terminal of a bus bar object.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="RegulatingControlModeKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#RegulatingControlModeKind">
+      <xs:annotation>
+         <xs:documentation>The kind of regulation model.   For example regulating voltage, reactive power, active power, etc.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="activePower">
+            <xs:annotation>
+               <xs:documentation>Active power is specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="admittance">
+            <xs:annotation>
+               <xs:documentation>Admittance is specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="currentFlow">
+            <xs:annotation>
+               <xs:documentation>Current flow is specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="powerFactor">
+            <xs:annotation>
+               <xs:documentation>Power factor is specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="reactivePower">
+            <xs:annotation>
+               <xs:documentation>Reactive power is specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="temperature">
+            <xs:annotation>
+               <xs:documentation>Control switches on/off based on the local temperature (i.e., a thermostat).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="timeScheduled">
+            <xs:annotation>
+               <xs:documentation>Control switches on/off by time of day. The times may change on the weekend, or in different seasons.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="voltage">
+            <xs:annotation>
+               <xs:documentation>Voltage is specified.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="RotatingMachine"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine">
+      <xs:annotation>
+         <xs:documentation>A rotating machine which may be used as a generator or motor.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="p"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.p">
+            <xs:annotation>
+               <xs:documentation>Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+               <xs:documentation>Starting value for a steady state solution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="q"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ReactivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.q">
+            <xs:annotation>
+               <xs:documentation>Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.</xs:documentation>
+               <xs:documentation>Starting value for a steady state solution.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedPowerFactor"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.ratedPowerFactor">
+            <xs:annotation>
+               <xs:documentation>Power factor (nameplate data). It is primarily used for short circuit data exchange according to IEC 60909. The attribute cannot be a negative value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedS"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ApparentPower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.ratedS">
+            <xs:annotation>
+               <xs:documentation>Nameplate apparent power rating for the unit.</xs:documentation>
+               <xs:documentation>The attribute shall have a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedU"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Voltage"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.ratedU">
+            <xs:annotation>
+               <xs:documentation>Rated voltage (nameplate data, Ur in IEC 60909-0). It is primarily used for short circuit data exchange according to IEC 60909.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.GeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A synchronous machine may operate as a generator and as such becomes a member of a generating unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="HydroPump"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroPump"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine.HydroPump">
+            <xs:annotation>
+               <xs:documentation>The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Terminal"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Terminal">
+      <xs:annotation>
+         <xs:documentation>An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="UnitMultiplier"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#UnitMultiplier">
+      <xs:annotation>
+         <xs:documentation>The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.</xs:documentation>
+         <xs:documentation>For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol "�" represents the derived unit "m2Pers", then applying the multiplier "k" can be conceptualized simply as "k�".</xs:documentation>
+         <xs:documentation>For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is defined as "kg", then the multiplier is applied to "kg" as a whole and does not replace the "k" in front of the "g". In this case, the multiplier of "m" would be used with the unit symbol of "kg" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the "kg" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the "kg" were replaced by a symbol "�", then it is easier to conceptualize the multiplier "m" as creating the proper unit "m�", and not the forbidden unit "mkg".</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="E">
+            <xs:annotation>
+               <xs:documentation>Exa 10**18.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="G">
+            <xs:annotation>
+               <xs:documentation>Giga 10**9.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="M">
+            <xs:annotation>
+               <xs:documentation>Mega 10**6.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="P">
+            <xs:annotation>
+               <xs:documentation>Peta 10**15.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="T">
+            <xs:annotation>
+               <xs:documentation>Tera 10**12.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Y">
+            <xs:annotation>
+               <xs:documentation>Yotta 10**24.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="Z">
+            <xs:annotation>
+               <xs:documentation>Zetta 10**21.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="a">
+            <xs:annotation>
+               <xs:documentation>Atto 10**-18.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="c">
+            <xs:annotation>
+               <xs:documentation>Centi 10**-2.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="d">
+            <xs:annotation>
+               <xs:documentation>Deci 10**-1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="da">
+            <xs:annotation>
+               <xs:documentation>Deca 10**1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="f">
+            <xs:annotation>
+               <xs:documentation>Femto 10**-15.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="h">
+            <xs:annotation>
+               <xs:documentation>Hecto 10**2.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="k">
+            <xs:annotation>
+               <xs:documentation>Kilo 10**3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="m">
+            <xs:annotation>
+               <xs:documentation>Milli 10**-3.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="micro">
+            <xs:annotation>
+               <xs:documentation>Micro 10**-6.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="n">
+            <xs:annotation>
+               <xs:documentation>Nano 10**-9.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="none">
+            <xs:annotation>
+               <xs:documentation>No multiplier or equivalently multiply by 1.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="p">
+            <xs:annotation>
+               <xs:documentation>Pico 10**-12.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="y">
+            <xs:annotation>
+               <xs:documentation>Yocto 10**-24.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="z">
+            <xs:annotation>
+               <xs:documentation>Zepto 10**-21.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="WindTurbineType3or4Dynamics"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#WindTurbineType3or4Dynamics">
+      <xs:annotation>
+         <xs:documentation>Parent class supporting relationships to wind turbines type 3 and type 4 and wind plant including their control models.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:simpleType name="ReactivePower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ReactivePower">
+      <xs:annotation>
+         <xs:documentation>Product of RMS value of the voltage and the RMS value of the quadrature component of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Reactance"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reactance">
+      <xs:annotation>
+         <xs:documentation>Reactance (imaginary part of impedance), at rated frequency.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="PerCent"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PerCent">
+      <xs:annotation>
+         <xs:documentation>Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="ApparentPower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ApparentPower">
+      <xs:annotation>
+         <xs:documentation>Product of the RMS value of the voltage and the RMS value of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Voltage"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Voltage">
+      <xs:annotation>
+         <xs:documentation>Electrical voltage, can be both AC and DC.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="PU" sawsdl:modelReference="http://iec.ch/TC57/CIM100#PU">
+      <xs:annotation>
+         <xs:documentation>Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="ActivePower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivePower">
+      <xs:annotation>
+         <xs:documentation>Product of RMS value of the voltage and the RMS value of the in-phase component of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Resistance"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Resistance">
+      <xs:annotation>
+         <xs:documentation>Resistance (real part of impedance).</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+</xs:schema>
