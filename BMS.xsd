@@ -1,0 +1,2826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://iec.ch/TC57/2007/BMS#"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://iec.ch/TC57/2007/BMS#"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation/>
+   <xs:element name="BMS" type="m:BMS"/>
+   <xs:complexType name="BMS">
+      <xs:sequence>
+         <xs:element name="AirCompressor"
+                     type="m:AirCompressor"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="BatteryUnit1"
+                     type="m:BatteryUnit1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="CAESPlant1"
+                     type="m:CAESPlant1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="CogenerationPlant"
+                     type="m:CogenerationPlant"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="CombinedCyclePlant"
+                     type="m:CombinedCyclePlant"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="EmissionAccount"
+                     type="m:EmissionAccount"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="EmissionCurve"
+                     type="m:EmissionCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="FossilFuel"
+                     type="m:FossilFuel"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="FuelAllocationSchedule"
+                     type="m:FuelAllocationSchedule"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="GenUnitOpCostCurve"
+                     type="m:GenUnitOpCostCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="GenUnitOpSchedule"
+                     type="m:GenUnitOpSchedule"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="GeneratingUnit1"
+                     type="m:GeneratingUnit1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="GrossToNetActivePowerCurve"
+                     type="m:GrossToNetActivePowerCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HeatInputCurve"
+                     type="m:HeatInputCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HeatRateCurve"
+                     type="m:HeatRateCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HydroGeneratingEfficiencyCurve"
+                     type="m:HydroGeneratingEfficiencyCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HydroGeneratingUnit1"
+                     type="m:HydroGeneratingUnit1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HydroPowerPlant1"
+                     type="m:HydroPowerPlant1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HydroPump"
+                     type="m:HydroPump"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="HydroPumpOpSchedule1"
+                     type="m:HydroPumpOpSchedule1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="IncrementalHeatRateCurve"
+                     type="m:IncrementalHeatRateCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="InflowForecast"
+                     type="m:InflowForecast"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="LevelVsVolumeCurve"
+                     type="m:LevelVsVolumeCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="NuclearGeneratingUnit"
+                     type="m:NuclearGeneratingUnit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="PenstockLossCurve1"
+                     type="m:PenstockLossCurve1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="PhotoVoltaicUnit"
+                     type="m:PhotoVoltaicUnit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="PowerElectronicsUnit"
+                     type="m:PowerElectronicsUnit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="PowerElectronicsWindUnit"
+                     type="m:PowerElectronicsWindUnit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="Reservoir1"
+                     type="m:Reservoir1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="ShutdownCurve"
+                     type="m:ShutdownCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="SolarGeneratingUnit"
+                     type="m:SolarGeneratingUnit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="StartIgnFuelCurve"
+                     type="m:StartIgnFuelCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="StartMainFuelCurve"
+                     type="m:StartMainFuelCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="StartRampCurve"
+                     type="m:StartRampCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="StartupModel1"
+                     type="m:StartupModel1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="SteamSendoutSchedule1"
+                     type="m:SteamSendoutSchedule1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="TailbayLossCurve"
+                     type="m:TailbayLossCurve"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="TargetLevelSchedule1"
+                     type="m:TargetLevelSchedule1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="ThermalGeneratingUnit1"
+                     type="m:ThermalGeneratingUnit1"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="WindGeneratingUnit"
+                     type="m:WindGeneratingUnit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="AirCompressor"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#AirCompressor">
+      <xs:annotation>
+         <xs:documentation>Combustion turbine air compressor which is an integral part of a compressed air energy storage (CAES) plant.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="airCompressorRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AirCompressor.airCompressorRating">
+            <xs:annotation>
+               <xs:documentation>Rating of the CAES air compressor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CAESPlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CAESPlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AirCompressor.CAESPlant">
+            <xs:annotation>
+               <xs:documentation>An air compressor may be a member of a compressed air energy storage plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CombustionTurbine"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CombustionTurbine"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#AirCompressor.CombustionTurbine">
+            <xs:annotation>
+               <xs:documentation>A CAES air compressor is driven by combustion turbine.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="BatteryStateKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryStateKind">
+      <xs:annotation>
+         <xs:documentation>The state of the battery unit.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="charging">
+            <xs:annotation>
+               <xs:documentation>Stored energy is increasing.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="discharging">
+            <xs:annotation>
+               <xs:documentation>Stored energy is decreasing.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="empty">
+            <xs:annotation>
+               <xs:documentation>Unable to discharge, and not charging.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="full">
+            <xs:annotation>
+               <xs:documentation>Unable to charge, and not discharging.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="waiting">
+            <xs:annotation>
+               <xs:documentation>Neither charging nor discharging, but able to do so.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="BatteryStateKind1"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryStateKind">
+      <xs:annotation>
+         <xs:documentation>The state of the battery unit.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="charging">
+            <xs:annotation>
+               <xs:documentation>Stored energy is increasing.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="discharging">
+            <xs:annotation>
+               <xs:documentation>Stored energy is decreasing.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="empty">
+            <xs:annotation>
+               <xs:documentation>Unable to discharge, and not charging.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="full">
+            <xs:annotation>
+               <xs:documentation>Unable to charge, and not discharging.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="waiting">
+            <xs:annotation>
+               <xs:documentation>Neither charging nor discharging, but able to do so.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="BatteryUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryUnit">
+      <xs:annotation>
+         <xs:documentation>An electrochemical energy storage device.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:PowerElectronicsUnit">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="BatteryUnit1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryUnit">
+      <xs:annotation>
+         <xs:documentation>An electrochemical energy storage device.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:PowerElectronicsUnit">
+            <xs:sequence>
+               <xs:element name="batteryState"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:BatteryStateKind"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryUnit.batteryState">
+                  <xs:annotation>
+                     <xs:documentation>The current state of the battery (charging, full, etc.).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ratedE"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:RealEnergy"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryUnit.ratedE">
+                  <xs:annotation>
+                     <xs:documentation>Full energy storage capacity of the battery. The attribute shall be a positive value.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="storedE"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:RealEnergy"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#BatteryUnit.storedE">
+                  <xs:annotation>
+                     <xs:documentation>Amount of energy currently stored. The attribute shall be a positive value or zero and lower than BatteryUnit.ratedE.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="CAESPlant"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CAESPlant">
+      <xs:annotation>
+         <xs:documentation>Compressed air energy storage plant.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="CAESPlant1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CAESPlant">
+      <xs:annotation>
+         <xs:documentation>Compressed air energy storage plant.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="energyStorageCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:RealEnergy"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CAESPlant.energyStorageCapacity">
+            <xs:annotation>
+               <xs:documentation>The rated energy storage capacity. The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedCapacityP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CAESPlant.ratedCapacityP">
+            <xs:annotation>
+               <xs:documentation>The CAES plant's gross rated generating capacity. The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AirCompressor"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:AirCompressor"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CAESPlant.AirCompressor">
+            <xs:annotation>
+               <xs:documentation>An air compressor may be a member of a compressed air energy storage plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CAESPlant.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may be a member of a compressed air energy storage plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CogenerationPlant"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant">
+      <xs:annotation>
+         <xs:documentation>A set of thermal generating units for the production of electrical energy and process steam (usually from the output of the steam turbines). The steam sendout is typically used for industrial purposes or for municipal heating and cooling.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="cogenHPSendoutRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant.cogenHPSendoutRating">
+            <xs:annotation>
+               <xs:documentation>The high pressure steam sendout.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="cogenHPSteamRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant.cogenHPSteamRating">
+            <xs:annotation>
+               <xs:documentation>The high pressure steam rating.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="cogenLPSendoutRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant.cogenLPSendoutRating">
+            <xs:annotation>
+               <xs:documentation>The low pressure steam sendout.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="cogenLPSteamRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant.cogenLPSteamRating">
+            <xs:annotation>
+               <xs:documentation>The low pressure steam rating.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant.ratedP">
+            <xs:annotation>
+               <xs:documentation>The rated output active power of the cogeneration plant.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="SteamSendoutSchedule"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:SteamSendoutSchedule"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CogenerationPlant.SteamSendoutSchedule">
+            <xs:annotation>
+               <xs:documentation>A cogeneration plant has a steam sendout schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CombinedCyclePlant"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CombinedCyclePlant">
+      <xs:annotation>
+         <xs:documentation>A set of combustion turbines and steam turbines where the exhaust heat from the combustion turbines is recovered to make steam for the steam turbines, resulting in greater overall plant efficiency.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="combCyclePlantRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#CombinedCyclePlant.combCyclePlantRating">
+            <xs:annotation>
+               <xs:documentation>The combined cycle plant's active power output rating.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CombustionTurbine"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#CombustionTurbine">
+      <xs:annotation>
+         <xs:documentation>A prime mover that is typically fuelled by gas or light oil.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="EmissionAccount"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionAccount">
+      <xs:annotation>
+         <xs:documentation>Accounts for tracking emissions usage and credits for thermal generating units. A unit may have zero or more emission accounts, and will typically have one for tracking usage and one for tracking credits.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="emissionType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:EmissionType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionAccount.emissionType">
+            <xs:annotation>
+               <xs:documentation>The type of emission, for example sulfur dioxide (SO2). The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfur dioxide).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="emissionValueSource"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:EmissionValueSource"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionAccount.emissionValueSource">
+            <xs:annotation>
+               <xs:documentation>The source of the emission value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionAccount.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have one or more emission allowance accounts.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EmissionCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between the unit's emission rate in units of mass per hour (Y-axis) and output active power (X-axis) for a given type of emission. This curve applies when only one type of fuel is being burned.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="emissionContent"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Emission"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionCurve.emissionContent">
+            <xs:annotation>
+               <xs:documentation>The emission content per quantity of fuel burned.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="emissionType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:EmissionType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionCurve.emissionType">
+            <xs:annotation>
+               <xs:documentation>The type of emission, which also gives the production rate measurement unit. The y1AxisUnits of the curve contains the unit of measure (e.g. kg) and the emissionType is the type of emission (e.g. sulfur dioxide).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="isNetGrossP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionCurve.isNetGrossP">
+            <xs:annotation>
+               <xs:documentation>Flag is set to true when output is expressed in net active power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionCurve.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have  one or more emission curves.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="EmissionType"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionType">
+      <xs:annotation>
+         <xs:documentation>The type of emission.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="carbonDioxide">
+            <xs:annotation>
+               <xs:documentation>Carbon dioxide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="carbonDisulfide">
+            <xs:annotation>
+               <xs:documentation>Carbon disulfide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="chlorine">
+            <xs:annotation>
+               <xs:documentation>Chlorine.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="hydrogenSulfide">
+            <xs:annotation>
+               <xs:documentation>Hydrogen sulfide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="nitrogenOxide">
+            <xs:annotation>
+               <xs:documentation>Nitrogen oxide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="sulfurDioxide">
+            <xs:annotation>
+               <xs:documentation>Sulfur dioxide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="EmissionType1"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionType">
+      <xs:annotation>
+         <xs:documentation>The type of emission.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="carbonDioxide">
+            <xs:annotation>
+               <xs:documentation>Carbon dioxide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="carbonDisulfide">
+            <xs:annotation>
+               <xs:documentation>Carbon disulfide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="chlorine">
+            <xs:annotation>
+               <xs:documentation>Chlorine.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="hydrogenSulfide">
+            <xs:annotation>
+               <xs:documentation>Hydrogen sulfide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="nitrogenOxide">
+            <xs:annotation>
+               <xs:documentation>Nitrogen oxide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="sulfurDioxide">
+            <xs:annotation>
+               <xs:documentation>Sulfur dioxide.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="EmissionValueSource"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionValueSource">
+      <xs:annotation>
+         <xs:documentation>The source of the emission value.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="calculated">
+            <xs:annotation>
+               <xs:documentation>Calculated.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="measured">
+            <xs:annotation>
+               <xs:documentation>Measured.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="EmissionValueSource1"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#EmissionValueSource">
+      <xs:annotation>
+         <xs:documentation>The source of the emission value.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="calculated">
+            <xs:annotation>
+               <xs:documentation>Calculated.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="measured">
+            <xs:annotation>
+               <xs:documentation>Measured.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="FossilFuel"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel">
+      <xs:annotation>
+         <xs:documentation>The fossil fuel consumed by the non-nuclear thermal generating unit.   For example, coal, oil, gas, etc.   These are the specific fuels that the generating unit can consume.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="fossilFuelType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:FuelType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fossilFuelType">
+            <xs:annotation>
+               <xs:documentation>The type of fossil fuel, such as coal, oil, or gas.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostPerHeatUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelCost">
+            <xs:annotation>
+               <xs:documentation>The cost in terms of heat value for the given type of fuel.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelDispatchCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostPerHeatUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelDispatchCost">
+            <xs:annotation>
+               <xs:documentation>The cost of fuel used for economic dispatching which includes: fuel cost, transportation cost,  and incremental maintenance cost.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelEffFactor"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PU"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelEffFactor">
+            <xs:annotation>
+               <xs:documentation>The efficiency factor for the fuel (per unit) in terms of the effective energy absorbed.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelHandlingCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostPerHeatUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelHandlingCost">
+            <xs:annotation>
+               <xs:documentation>Handling and processing cost associated with this fuel.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelHeatContent"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelHeatContent">
+            <xs:annotation>
+               <xs:documentation>The amount of heat per weight (or volume) of the given type of fuel.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelMixture"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelMixture">
+            <xs:annotation>
+               <xs:documentation>Relative amount of the given type of fuel, when multiple fuels are being consumed.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelSulfur"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PU"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.fuelSulfur">
+            <xs:annotation>
+               <xs:documentation>The fuel's fraction of pollution credit per unit of heat content.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="highBreakpointP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.highBreakpointP">
+            <xs:annotation>
+               <xs:documentation>The active power output level of the unit at which the given type of fuel is switched on. This fuel (e.g., oil) is sometimes used to supplement the base fuel (e.g., coal) at high active power output levels.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lowBreakpointP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.lowBreakpointP">
+            <xs:annotation>
+               <xs:documentation>The active power output level of the unit at which the given type of fuel is switched off. This fuel (e.g., oil) is sometimes used to stabilize the base fuel (e.g., coal) at low active power output levels.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FossilFuel.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have one or more fossil fuels.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="FuelAllocationSchedule"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule">
+      <xs:annotation>
+         <xs:documentation>The amount of fuel of a given type which is allocated for consumption over a specified period of time.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="fuelAllocationEndDate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.fuelAllocationEndDate">
+            <xs:annotation>
+               <xs:documentation>The end time and date of the fuel allocation schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelAllocationStartDate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.fuelAllocationStartDate">
+            <xs:annotation>
+               <xs:documentation>The start time and date of the fuel allocation schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fuelType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:FuelType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.fuelType">
+            <xs:annotation>
+               <xs:documentation>The type of fuel, which also indicates the corresponding measurement unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="maxFuelAllocation"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.maxFuelAllocation">
+            <xs:annotation>
+               <xs:documentation>The maximum amount of fuel that is allocated for consumption for the scheduled time period.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minFuelAllocation"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.minFuelAllocation">
+            <xs:annotation>
+               <xs:documentation>The minimum amount of fuel that is allocated for consumption for the scheduled time period, e.g., based on a "take-or-pay" contract.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="FossilFuel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:FossilFuel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.FossilFuel">
+            <xs:annotation>
+               <xs:documentation>A fuel allocation schedule shall have a fossil fuel.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelAllocationSchedule.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have one or more fuel allocation schedules.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="FuelType"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelType">
+      <xs:annotation>
+         <xs:documentation>Type of fuel.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="brownCoalLignite">
+            <xs:annotation>
+               <xs:documentation>Brown coal lignite.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="coal">
+            <xs:annotation>
+               <xs:documentation>Generic coal, not including lignite type.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="coalDerivedGas">
+            <xs:annotation>
+               <xs:documentation>Coal derived gas.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="gas">
+            <xs:annotation>
+               <xs:documentation>Natural gas.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="hardCoal">
+            <xs:annotation>
+               <xs:documentation>Hard coal.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lignite">
+            <xs:annotation>
+               <xs:documentation>The fuel is lignite coal.  Note that this is a special type of coal, so the other enum of coal is reserved for hard coal types or if the exact type of coal is not known.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="oil">
+            <xs:annotation>
+               <xs:documentation>Oil.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="oilShale">
+            <xs:annotation>
+               <xs:documentation>Oil Shale.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Any fuel type not included in the rest of the enumerated value.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="peat">
+            <xs:annotation>
+               <xs:documentation>Peat.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="FuelType1"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#FuelType">
+      <xs:annotation>
+         <xs:documentation>Type of fuel.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="brownCoalLignite">
+            <xs:annotation>
+               <xs:documentation>Brown coal lignite.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="coal">
+            <xs:annotation>
+               <xs:documentation>Generic coal, not including lignite type.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="coalDerivedGas">
+            <xs:annotation>
+               <xs:documentation>Coal derived gas.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="gas">
+            <xs:annotation>
+               <xs:documentation>Natural gas.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="hardCoal">
+            <xs:annotation>
+               <xs:documentation>Hard coal.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="lignite">
+            <xs:annotation>
+               <xs:documentation>The fuel is lignite coal.  Note that this is a special type of coal, so the other enum of coal is reserved for hard coal types or if the exact type of coal is not known.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="oil">
+            <xs:annotation>
+               <xs:documentation>Oil.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="oilShale">
+            <xs:annotation>
+               <xs:documentation>Oil Shale.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="other">
+            <xs:annotation>
+               <xs:documentation>Any fuel type not included in the rest of the enumerated value.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="peat">
+            <xs:annotation>
+               <xs:documentation>Peat.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="GenUnitOpCostCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GenUnitOpCostCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between unit operating cost (Y-axis) and unit output active power (X-axis). The operating cost curve for thermal units is derived from heat input and fuel costs. The operating cost curve for hydro units is derived from water flow rates and equivalent water costs.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="isNetGrossP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GenUnitOpCostCurve.isNetGrossP">
+            <xs:annotation>
+               <xs:documentation>Flag is set to true when output is expressed in net active power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GenUnitOpCostCurve.GeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A generating unit may have one or more cost curves, depending upon fuel mixture and fuel cost.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="GenUnitOpSchedule"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GenUnitOpSchedule">
+      <xs:annotation>
+         <xs:documentation>The generating unit's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The X-axis represents absolute time. The Y1-axis represents the status (0=off-line and unavailable: 1=available: 2=must run: 3=must run at fixed power value: etc.). The Y2-axis represents the must run fixed power value where required.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="GeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GenUnitOpSchedule.GeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A generating unit may have an operating schedule, indicating the planned operation of the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="GeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="GeneratingUnit1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="allocSpinResP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.allocSpinResP">
+            <xs:annotation>
+               <xs:documentation>The planned unused capacity (spinning reserve) which can be used to support emergency load.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="autoCntrlMarginP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.autoCntrlMarginP">
+            <xs:annotation>
+               <xs:documentation>The planned unused capacity which can be used to support automatic control overruns.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="baseP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.baseP">
+            <xs:annotation>
+               <xs:documentation>For dispatchable units, this value represents the economic active power basepoint, for units that are not dispatchable, this value represents the fixed generation value. The value shall be between the operating low and high limits.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="controlDeadband"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.controlDeadband">
+            <xs:annotation>
+               <xs:documentation>Unit control error deadband. When a unit's desired active power change is less than this deadband, then no control pulses will be sent to the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="controlPulseHigh"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.controlPulseHigh">
+            <xs:annotation>
+               <xs:documentation>Pulse high limit which is the largest control pulse that the unit can respond to.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="controlPulseLow"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.controlPulseLow">
+            <xs:annotation>
+               <xs:documentation>Pulse low limit which is the smallest control pulse that the unit can respond to.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="controlResponseRate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePowerChangeRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.controlResponseRate">
+            <xs:annotation>
+               <xs:documentation>Unit response rate which specifies the active power change for a control pulse of one second in the most responsive loading level of the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="efficiency"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.efficiency">
+            <xs:annotation>
+               <xs:documentation>The efficiency of the unit in converting mechanical energy, from the prime mover, into electrical energy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="genControlMode"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeneratorControlMode"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.genControlMode">
+            <xs:annotation>
+               <xs:documentation>The unit control mode.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="genControlSource"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeneratorControlSource"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.genControlSource">
+            <xs:annotation>
+               <xs:documentation>The source of controls for a generating unit.  Defines the control status of the generating unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="governorMPL"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PU"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.governorMPL">
+            <xs:annotation>
+               <xs:documentation>Governor motor position limit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="governorSCD"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.governorSCD">
+            <xs:annotation>
+               <xs:documentation>Governor Speed Changer Droop.   This is the change in generator power output divided by the change in frequency normalized by the nominal power of the generator and the nominal frequency and expressed in percent and negated. A positive value of speed change droop provides additional generator output upon a drop in frequency.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="highControlLimit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.highControlLimit">
+            <xs:annotation>
+               <xs:documentation>High limit for secondary (AGC) control.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="initialP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.initialP">
+            <xs:annotation>
+               <xs:documentation>Default initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="longPF"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.longPF">
+            <xs:annotation>
+               <xs:documentation>Generating unit long term economic participation factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lowControlLimit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.lowControlLimit">
+            <xs:annotation>
+               <xs:documentation>Low limit for secondary (AGC) control.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lowerRampRate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePowerChangeRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.lowerRampRate">
+            <xs:annotation>
+               <xs:documentation>The normal maximum rate the generating unit active power output can be lowered by control actions.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="maxEconomicP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.maxEconomicP">
+            <xs:annotation>
+               <xs:documentation>Maximum high economic active power limit, that should not exceed the maximum operating active power limit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="maximumAllowableSpinningReserve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.maximumAllowableSpinningReserve">
+            <xs:annotation>
+               <xs:documentation>Maximum allowable spinning reserve. Spinning reserve will never be considered greater than this value regardless of the current operating point.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="maxOperatingP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.maxOperatingP">
+            <xs:annotation>
+               <xs:documentation>This is the maximum operating active power limit the dispatcher can enter for this unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minEconomicP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.minEconomicP">
+            <xs:annotation>
+               <xs:documentation>Low economic active power limit that shall be greater than or equal to the minimum operating active power limit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minimumOffTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.minimumOffTime">
+            <xs:annotation>
+               <xs:documentation>Minimum time interval between unit shutdown and startup.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minOperatingP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.minOperatingP">
+            <xs:annotation>
+               <xs:documentation>This is the minimum operating active power limit the dispatcher can enter for this unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="modelDetail"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Classification"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.modelDetail">
+            <xs:annotation>
+               <xs:documentation>Detail level of the generator model data.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nominalP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.nominalP">
+            <xs:annotation>
+               <xs:documentation>The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value equal to or less than RotatingMachine.ratedS.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="normalPF"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.normalPF">
+            <xs:annotation>
+               <xs:documentation>Generating unit economic participation factor.  The sum of the participation factors across generating units does not have to sum to one.  It is used for representing distributed slack participation factor. The attribute shall be a positive value or zero.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="penaltyFactor"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.penaltyFactor">
+            <xs:annotation>
+               <xs:documentation>Defined as: 1 / ( 1 - Incremental Transmission Loss); with the Incremental Transmission Loss expressed as a plus or minus value. The typical range of penalty factors is (0.9 to 1.1).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="raiseRampRate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePowerChangeRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.raiseRampRate">
+            <xs:annotation>
+               <xs:documentation>The normal maximum rate the generating unit active power output can be raised by control actions.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedGrossMaxP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.ratedGrossMaxP">
+            <xs:annotation>
+               <xs:documentation>The unit's gross rated maximum capacity (book value).</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedGrossMinP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.ratedGrossMinP">
+            <xs:annotation>
+               <xs:documentation>The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ratedNetMaxP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.ratedNetMaxP">
+            <xs:annotation>
+               <xs:documentation>The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="shortPF"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.shortPF">
+            <xs:annotation>
+               <xs:documentation>Generating unit short term economic participation factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="startupCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.startupCost">
+            <xs:annotation>
+               <xs:documentation>The initial startup cost incurred for each start of the GeneratingUnit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="startupTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.startupTime">
+            <xs:annotation>
+               <xs:documentation>Time it takes to get the unit on-line, from the time that the prime mover mechanical power is applied.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="tieLinePF"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.tieLinePF">
+            <xs:annotation>
+               <xs:documentation>Generating unit economic participation factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="totalEfficiency"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PerCent"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.totalEfficiency">
+            <xs:annotation>
+               <xs:documentation>The efficiency of the unit in converting the fuel into electrical energy.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="variableCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.variableCost">
+            <xs:annotation>
+               <xs:documentation>The variable cost component of production per unit of ActivePower.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GenUnitOpSchedule"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GenUnitOpSchedule"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratingUnit.GenUnitOpSchedule">
+            <xs:annotation>
+               <xs:documentation>A generating unit may have an operating schedule, indicating the planned operation of the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="GeneratorControlMode"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratorControlMode">
+      <xs:annotation>
+         <xs:documentation>Unit control modes.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="pulse">
+            <xs:annotation>
+               <xs:documentation>Pulse control mode.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="setpoint">
+            <xs:annotation>
+               <xs:documentation>Setpoint control mode.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="GeneratorControlMode1"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratorControlMode">
+      <xs:annotation>
+         <xs:documentation>Unit control modes.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="pulse">
+            <xs:annotation>
+               <xs:documentation>Pulse control mode.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="setpoint">
+            <xs:annotation>
+               <xs:documentation>Setpoint control mode.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="GeneratorControlSource"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratorControlSource">
+      <xs:annotation>
+         <xs:documentation>The source of controls for a generating unit.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="offAGC">
+            <xs:annotation>
+               <xs:documentation>Off of automatic generation control (AGC).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="onAGC">
+            <xs:annotation>
+               <xs:documentation>On automatic generation control (AGC).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="plantControl">
+            <xs:annotation>
+               <xs:documentation>Plant is controlling.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="unavailable">
+            <xs:annotation>
+               <xs:documentation>Not available.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="GeneratorControlSource1"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#GeneratorControlSource">
+      <xs:annotation>
+         <xs:documentation>The source of controls for a generating unit.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="offAGC">
+            <xs:annotation>
+               <xs:documentation>Off of automatic generation control (AGC).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="onAGC">
+            <xs:annotation>
+               <xs:documentation>On automatic generation control (AGC).</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="plantControl">
+            <xs:annotation>
+               <xs:documentation>Plant is controlling.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="unavailable">
+            <xs:annotation>
+               <xs:documentation>Not available.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="GrossToNetActivePowerCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#GrossToNetActivePowerCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between the generating unit's gross active power output on the X-axis (measured at the terminals of the machine(s)) and the generating unit's net active power output on the Y-axis (based on utility-defined measurements at the power station). Station service loads, when modelled, should be treated as non-conforming bus loads. There may be more than one curve, depending on the auxiliary equipment that is in service.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="GeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:GeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#GrossToNetActivePowerCurve.GeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="HeatInputCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between unit heat input in energy per time for main fuel (Y1-axis) and supplemental fuel (Y2-axis) versus unit output in active power (X-axis). The quantity of main fuel used to sustain generation at this output level is prorated for throttling between definition points. The quantity of supplemental fuel used at this output level is fixed and not prorated.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="auxPowerMult"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PU"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve.auxPowerMult">
+            <xs:annotation>
+               <xs:documentation>Power output - auxiliary power multiplier adjustment factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auxPowerOffset"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve.auxPowerOffset">
+            <xs:annotation>
+               <xs:documentation>Power output - auxiliary power offset adjustment factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="heatInputEff"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PU"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve.heatInputEff">
+            <xs:annotation>
+               <xs:documentation>Heat input - efficiency multiplier adjustment factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="heatInputOffset"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HeatRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve.heatInputOffset">
+            <xs:annotation>
+               <xs:documentation>Heat input - offset adjustment factor.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="isNetGrossP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve.isNetGrossP">
+            <xs:annotation>
+               <xs:documentation>Flag is set to true when output is expressed in net active power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatInputCurve.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a heat input curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="HeatRateCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatRateCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between unit heat rate per active power (Y-axis) and  unit output (X-axis). The heat input is from all fuels.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="isNetGrossP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatRateCurve.isNetGrossP">
+            <xs:annotation>
+               <xs:documentation>Flag is set to true when output is expressed in net active power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatRateCurve.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a heat rate curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="HydroEnergyConversionKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroEnergyConversionKind">
+      <xs:annotation>
+         <xs:documentation>Specifies the capability of the hydro generating unit to convert energy as a generator or pump.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="generator">
+            <xs:annotation>
+               <xs:documentation>Able to generate power, but not able to pump water for energy storage.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="pumpAndGenerator">
+            <xs:annotation>
+               <xs:documentation>Able to both generate power and pump water for energy storage.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="HydroGeneratingEfficiencyCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingEfficiencyCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between unit efficiency as percentage and unit output active power for a given net head in meters. The relationship between efficiency, discharge, head, and power output is expressed as follows:   E =KP/HQ</xs:documentation>
+         <xs:documentation>where:  E is the efficiency, as a percentage; P is the active power; H is the height; Q is the discharge, volume/time unit; K is a constant.</xs:documentation>
+         <xs:documentation>For example, a curve instance for a given net head could show efficiency (Y-axis) versus active power output (X-axis) or versus discharge on the X-axis.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="HydroGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingEfficiencyCurve.HydroGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A hydro generating unit has an efficiency curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="HydroGeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="HydroGeneratingUnit1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dropHeight"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Length"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit.dropHeight">
+            <xs:annotation>
+               <xs:documentation>The height water drops from the reservoir mid-point to the turbine.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="energyConversionCapability"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroEnergyConversionKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit.energyConversionCapability">
+            <xs:annotation>
+               <xs:documentation>Energy conversion capability for generating.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="hydroUnitWaterCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostPerVolume"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit.hydroUnitWaterCost">
+            <xs:annotation>
+               <xs:documentation>The equivalent cost of water that drives the hydro turbine.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="turbineType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroTurbineKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit.turbineType">
+            <xs:annotation>
+               <xs:documentation>Type of turbine.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="HydroPowerPlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroPowerPlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit.HydroPowerPlant">
+            <xs:annotation>
+               <xs:documentation>The hydro generating unit belongs to a hydro power plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PenstockLossCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PenstockLossCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroGeneratingUnit.PenstockLossCurve">
+            <xs:annotation>
+               <xs:documentation>A hydro generating unit has a penstock loss curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="HydroPlantStorageKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPlantStorageKind">
+      <xs:annotation>
+         <xs:documentation>The type of hydro power plant.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="pumpedStorage">
+            <xs:annotation>
+               <xs:documentation>Pumped storage.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="runOfRiver">
+            <xs:annotation>
+               <xs:documentation>Run of river.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="storage">
+            <xs:annotation>
+               <xs:documentation>Storage.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="HydroPowerPlant"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant">
+      <xs:annotation>
+         <xs:documentation>A hydro power station which can generate or pump. When generating, the generator turbines receive water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="HydroPowerPlant1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant">
+      <xs:annotation>
+         <xs:documentation>A hydro power station which can generate or pump. When generating, the generator turbines receive water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dischargeTravelDelay"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.dischargeTravelDelay">
+            <xs:annotation>
+               <xs:documentation>Water travel delay from tailbay to next downstream hydro power station.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="genRatedP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.genRatedP">
+            <xs:annotation>
+               <xs:documentation>The hydro plant's generating rating active power for rated head conditions.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="hydroPlantStorageType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroPlantStorageKind"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.hydroPlantStorageType">
+            <xs:annotation>
+               <xs:documentation>The type of hydro power plant water storage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="penstockType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.penstockType">
+            <xs:annotation>
+               <xs:documentation>Type and configuration of hydro plant penstock(s).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="plantDischargeCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:VolumeFlowRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.plantDischargeCapacity">
+            <xs:annotation>
+               <xs:documentation>Total plant discharge capacity.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="plantRatedHead"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Length"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.plantRatedHead">
+            <xs:annotation>
+               <xs:documentation>The plant's rated gross head.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="pumpRatedP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.pumpRatedP">
+            <xs:annotation>
+               <xs:documentation>The hydro plant's pumping rating active power for rated head conditions.</xs:documentation>
+               <xs:documentation>The attribute shall be a positive value.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="surgeTankCode"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.surgeTankCode">
+            <xs:annotation>
+               <xs:documentation>A code describing the type (or absence) of surge tank that is associated with the hydro power plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="surgeTankCrestLevel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WaterLevel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.surgeTankCrestLevel">
+            <xs:annotation>
+               <xs:documentation>The level at which the surge tank spills.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GenSourcePumpDischargeReservoir"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reservoir"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.GenSourcePumpDischargeReservoir">
+            <xs:annotation>
+               <xs:documentation>Generators are supplied water from or pumps discharge water to an upstream reservoir.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Reservoir"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reservoir"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPowerPlant.Reservoir">
+            <xs:annotation>
+               <xs:documentation>Generators discharge water to or pumps are supplied water from a downstream reservoir.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="HydroPump"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump">
+      <xs:annotation>
+         <xs:documentation>A synchronous motor-driven pump, typically associated with a pumped storage plant.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="pumpDischAtMaxHead"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:VolumeFlowRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.pumpDischAtMaxHead">
+            <xs:annotation>
+               <xs:documentation>The pumping discharge under maximum head conditions, usually at full gate.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="pumpDischAtMinHead"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:VolumeFlowRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.pumpDischAtMinHead">
+            <xs:annotation>
+               <xs:documentation>The pumping discharge under minimum head conditions, usually at full gate.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="pumpPowerAtMaxHead"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.pumpPowerAtMaxHead">
+            <xs:annotation>
+               <xs:documentation>The pumping power under maximum head conditions, usually at full gate.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="pumpPowerAtMinHead"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.pumpPowerAtMinHead">
+            <xs:annotation>
+               <xs:documentation>The pumping power under minimum head conditions, usually at full gate.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="HydroPowerPlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroPowerPlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.HydroPowerPlant">
+            <xs:annotation>
+               <xs:documentation>The hydro pump may be a member of a pumped storage plant or a pump for distributing water.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="HydroPumpOpSchedule"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroPumpOpSchedule"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.HydroPumpOpSchedule">
+            <xs:annotation>
+               <xs:documentation>The hydro pump has a pumping schedule over time, indicating when pumping is to occur.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="RotatingMachine"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:RotatingMachine"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPump.RotatingMachine">
+            <xs:annotation>
+               <xs:documentation>The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="HydroPumpOpSchedule"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPumpOpSchedule">
+      <xs:annotation>
+         <xs:documentation>The hydro pump's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The unit's operating schedule status is typically given as: (0=unavailable) (1=available to startup or shutdown)  (2=must pump).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="HydroPumpOpSchedule1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPumpOpSchedule">
+      <xs:annotation>
+         <xs:documentation>The hydro pump's Operator-approved current operating schedule (or plan), typically produced with the aid of unit commitment type analyses. The unit's operating schedule status is typically given as: (0=unavailable) (1=available to startup or shutdown)  (2=must pump).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="HydroPump"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroPump"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroPumpOpSchedule.HydroPump">
+            <xs:annotation>
+               <xs:documentation>The hydro pump has a pumping schedule over time, indicating when pumping is to occur.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="HydroTurbineKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#HydroTurbineKind">
+      <xs:annotation>
+         <xs:documentation>Type of turbine.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="francis">
+            <xs:annotation>
+               <xs:documentation>Francis.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="kaplan">
+            <xs:annotation>
+               <xs:documentation>Kaplan.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="pelton">
+            <xs:annotation>
+               <xs:documentation>Pelton.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="IncrementalHeatRateCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#IncrementalHeatRateCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between unit incremental heat rate in (delta energy/time) per (delta active power) and unit output in active power. The IHR curve represents the slope of the HeatInputCurve. Note that the "incremental heat rate" and the "heat rate" have the same engineering units.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="isNetGrossP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:boolean"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IncrementalHeatRateCurve.isNetGrossP">
+            <xs:annotation>
+               <xs:documentation>Flag is set to true when output is expressed in net active power.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#IncrementalHeatRateCurve.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have an incremental heat rate curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="InflowForecast"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#InflowForecast">
+      <xs:annotation>
+         <xs:documentation>Natural water inflow to a reservoir, usually forecasted from predicted rain and snowmelt. Typically in one hour increments for up to 10 days. The forecast is given in average cubic meters per second over the time increment.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="Reservoir"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reservoir"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#InflowForecast.Reservoir">
+            <xs:annotation>
+               <xs:documentation>A reservoir may have a "natural" inflow forecast.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="LevelVsVolumeCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#LevelVsVolumeCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between reservoir volume and reservoir level. The  volume is at the Y-axis and the reservoir level at the X-axis.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="Reservoir"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reservoir"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#LevelVsVolumeCurve.Reservoir">
+            <xs:annotation>
+               <xs:documentation>A reservoir may have a level versus volume relationship.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NuclearGeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#NuclearGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A nuclear generating unit.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:GeneratingUnit">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="PenstockLossCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PenstockLossCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between penstock head loss (in meters) and  total discharge through the penstock (in cubic meters per second). One or more turbines may be connected to the same penstock.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="PenstockLossCurve1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PenstockLossCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between penstock head loss (in meters) and  total discharge through the penstock (in cubic meters per second). One or more turbines may be connected to the same penstock.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="HydroGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PenstockLossCurve.HydroGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A hydro generating unit has a penstock loss curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PhotoVoltaicUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PhotoVoltaicUnit">
+      <xs:annotation>
+         <xs:documentation>A photovoltaic device or an aggregation of such devices.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:PowerElectronicsUnit">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="PowerElectronicsConnection"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsConnection">
+      <xs:annotation>
+         <xs:documentation>A connection to the AC network for energy production or consumption that uses power electronics rather than rotating machines.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="PowerElectronicsUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsUnit">
+      <xs:annotation>
+         <xs:documentation>A generating unit or battery or aggregation that connects to the AC network using power electronics rather than rotating machines.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="maxP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsUnit.maxP">
+            <xs:annotation>
+               <xs:documentation>Maximum active power limit. This is the maximum (nameplate) limit for the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsUnit.minP">
+            <xs:annotation>
+               <xs:documentation>Minimum active power limit. This is the minimum (nameplate) limit for the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="PowerElectronicsConnection"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:PowerElectronicsConnection"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsUnit.PowerElectronicsConnection">
+            <xs:annotation>
+               <xs:documentation>A power electronics unit has a connection to the AC network.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="PowerElectronicsWindUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#PowerElectronicsWindUnit">
+      <xs:annotation>
+         <xs:documentation>A wind generating unit that connects to the AC network with power electronics rather than rotating machines or an aggregation of such units.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:PowerElectronicsUnit">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Reservoir"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir">
+      <xs:annotation>
+         <xs:documentation>A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="Reservoir1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir">
+      <xs:annotation>
+         <xs:documentation>A water storage facility within a hydro system, including: ponds, lakes, lagoons, and rivers. The storage is usually behind some type of dam.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="activeStorageCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Volume"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.activeStorageCapacity">
+            <xs:annotation>
+               <xs:documentation>Storage volume between the full supply level and the normal minimum operating level.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="energyStorageRating"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.energyStorageRating">
+            <xs:annotation>
+               <xs:documentation>The reservoir's energy storage rating in energy for given head conditions.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fullSupplyLevel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WaterLevel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.fullSupplyLevel">
+            <xs:annotation>
+               <xs:documentation>Full supply level, above which water will spill. This can be the spillway crest level or the top of closed gates.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="grossCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Volume"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.grossCapacity">
+            <xs:annotation>
+               <xs:documentation>Total capacity of reservoir.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="normalMinOperateLevel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WaterLevel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.normalMinOperateLevel">
+            <xs:annotation>
+               <xs:documentation>Normal minimum operating level below which the penstocks will draw air.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="riverOutletWorks"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.riverOutletWorks">
+            <xs:annotation>
+               <xs:documentation>River outlet works for riparian right releases or other purposes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="spillTravelDelay"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Seconds"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.spillTravelDelay">
+            <xs:annotation>
+               <xs:documentation>The spillway water travel delay to the next downstream reservoir.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="spillwayCapacity"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:float"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.spillwayCapacity">
+            <xs:annotation>
+               <xs:documentation>The flow capacity of the spillway in cubic meters per second.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="spillwayCrestLength"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Length"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.spillwayCrestLength">
+            <xs:annotation>
+               <xs:documentation>The length of the spillway crest.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="spillwayCrestLevel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WaterLevel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.spillwayCrestLevel">
+            <xs:annotation>
+               <xs:documentation>Spillway crest level above which water will spill.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="spillWayGateType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:string"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.spillWayGateType">
+            <xs:annotation>
+               <xs:documentation>Type of spillway gate, including parameters.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="SpillsFromReservoir"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reservoir"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.SpillsFromReservoir">
+            <xs:annotation>
+               <xs:documentation>A reservoir may spill into a downstream reservoir.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="TargetLevelSchedule"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:TargetLevelSchedule"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#Reservoir.TargetLevelSchedule">
+            <xs:annotation>
+               <xs:documentation>A reservoir may have a water level target schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="RotatingMachine"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#RotatingMachine">
+      <xs:annotation>
+         <xs:documentation>A rotating machine which may be used as a generator or motor.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="ShutdownCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ShutdownCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between the rate in gross active power/minute (Y-axis) at which a unit should be shutdown and its present gross MW output (X-axis).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="shutdownCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ShutdownCurve.shutdownCost">
+            <xs:annotation>
+               <xs:documentation>Fixed shutdown cost.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="shutdownDate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ShutdownCurve.shutdownDate">
+            <xs:annotation>
+               <xs:documentation>The date and time of the most recent generating unit shutdown.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ShutdownCurve.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a shutdown curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="SolarGeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#SolarGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A solar thermal generating unit, connected to the grid by means of a rotating machine.  This class does not represent photovoltaic (PV) generation.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:GeneratingUnit">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="StartIgnFuelCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartIgnFuelCurve">
+      <xs:annotation>
+         <xs:documentation>The quantity of ignition fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ignitionFuelType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:FuelType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartIgnFuelCurve.ignitionFuelType">
+            <xs:annotation>
+               <xs:documentation>Type of ignition fuel.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartupModel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartupModel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartIgnFuelCurve.StartupModel">
+            <xs:annotation>
+               <xs:documentation>The unit's startup model may have a startup ignition fuel curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="StartMainFuelCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartMainFuelCurve">
+      <xs:annotation>
+         <xs:documentation>The quantity of main fuel (Y-axis) used to restart and repay the auxiliary power consumed versus the number of hours (X-axis) the unit was off line.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="mainFuelType"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:FuelType"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartMainFuelCurve.mainFuelType">
+            <xs:annotation>
+               <xs:documentation>Type of main fuel.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartupModel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartupModel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartMainFuelCurve.StartupModel">
+            <xs:annotation>
+               <xs:documentation>The unit's startup model may have a startup main fuel curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="StartRampCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartRampCurve">
+      <xs:annotation>
+         <xs:documentation>Rate in gross active power per minute (Y-axis) at which a unit can be loaded versus the number of hours (X-axis) the unit was off line.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="hotStandbyRamp"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePowerChangeRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartRampCurve.hotStandbyRamp">
+            <xs:annotation>
+               <xs:documentation>The startup ramp rate in gross for a unit that is on hot standby.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartupModel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartupModel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartRampCurve.StartupModel">
+            <xs:annotation>
+               <xs:documentation>The unit's startup model may have a startup ramp curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="StartupModel"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel">
+      <xs:annotation>
+         <xs:documentation>Unit start up characteristics depending on how long the unit has been off line.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="StartupModel1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel">
+      <xs:annotation>
+         <xs:documentation>Unit start up characteristics depending on how long the unit has been off line.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="fixedMaintCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.fixedMaintCost">
+            <xs:annotation>
+               <xs:documentation>Fixed maintenance cost.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="hotStandbyHeat"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HeatRate"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.hotStandbyHeat">
+            <xs:annotation>
+               <xs:documentation>The amount of heat input per time unit required for hot standby operation.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="incrementalMaintCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostPerEnergyUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.incrementalMaintCost">
+            <xs:annotation>
+               <xs:documentation>Incremental maintenance cost.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minimumDownTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Hours"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.minimumDownTime">
+            <xs:annotation>
+               <xs:documentation>The minimum number of hours the unit must be down before restart.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="minimumRunTime"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Hours"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.minimumRunTime">
+            <xs:annotation>
+               <xs:documentation>The minimum number of hours the unit must be operating before being allowed to shut down.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="riskFactorCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.riskFactorCost">
+            <xs:annotation>
+               <xs:documentation>The opportunity cost associated with the return in monetary unit. This represents the restart's "share" of the unit depreciation and risk of an event which would damage the unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="startupCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Money"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.startupCost">
+            <xs:annotation>
+               <xs:documentation>Total miscellaneous start up costs.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="startupDate"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:dateTime"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.startupDate">
+            <xs:annotation>
+               <xs:documentation>The date and time of the most recent generating unit startup.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="startupPriority"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="xs:integer"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.startupPriority">
+            <xs:annotation>
+               <xs:documentation>Startup priority within control area where lower numbers indicate higher priorities.  More than one unit in an area may be assigned the same priority.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="stbyAuxP"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ActivePower"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.stbyAuxP">
+            <xs:annotation>
+               <xs:documentation>The unit's auxiliary active power consumption to maintain standby mode.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartIgnFuelCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartIgnFuelCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.StartIgnFuelCurve">
+            <xs:annotation>
+               <xs:documentation>The unit's startup model may have a startup ignition fuel curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartMainFuelCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartMainFuelCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.StartMainFuelCurve">
+            <xs:annotation>
+               <xs:documentation>The unit's startup model may have a startup main fuel curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartRampCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartRampCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.StartRampCurve">
+            <xs:annotation>
+               <xs:documentation>The unit's startup model may have a startup ramp curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ThermalGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ThermalGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#StartupModel.ThermalGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a startup model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="SteamSendoutSchedule"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#SteamSendoutSchedule">
+      <xs:annotation>
+         <xs:documentation>The cogeneration plant's steam sendout schedule in volume per time unit.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="SteamSendoutSchedule1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#SteamSendoutSchedule">
+      <xs:annotation>
+         <xs:documentation>The cogeneration plant's steam sendout schedule in volume per time unit.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="CogenerationPlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CogenerationPlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#SteamSendoutSchedule.CogenerationPlant">
+            <xs:annotation>
+               <xs:documentation>A cogeneration plant has a steam sendout schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="TailbayLossCurve"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TailbayLossCurve">
+      <xs:annotation>
+         <xs:documentation>Relationship between tailbay head loss height (Y-axis) and the total discharge into the power station's tailbay volume per time unit (X-axis) . There could be more than one curve depending on the level of the tailbay reservoir or river level.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="HydroGeneratingUnit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HydroGeneratingUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TailbayLossCurve.HydroGeneratingUnit">
+            <xs:annotation>
+               <xs:documentation>A hydro generating unit has a tailbay loss curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="TargetLevelSchedule"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TargetLevelSchedule">
+      <xs:annotation>
+         <xs:documentation>Reservoir water level targets from advanced studies or "rule curves". Typically in one hour increments for up to 10 days.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="TargetLevelSchedule1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#TargetLevelSchedule">
+      <xs:annotation>
+         <xs:documentation>Reservoir water level targets from advanced studies or "rule curves". Typically in one hour increments for up to 10 days.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="highLevelLimit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WaterLevel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TargetLevelSchedule.highLevelLimit">
+            <xs:annotation>
+               <xs:documentation>High target level limit, above which the reservoir operation will be penalized.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="lowLevelLimit"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:WaterLevel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TargetLevelSchedule.lowLevelLimit">
+            <xs:annotation>
+               <xs:documentation>Low target level limit, below which the reservoir operation will be penalized.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="Reservoir"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:Reservoir"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#TargetLevelSchedule.Reservoir">
+            <xs:annotation>
+               <xs:documentation>A reservoir may have a water level target schedule.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ThermalGeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:GeneratingUnit">
+            <xs:sequence/>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="ThermalGeneratingUnit1"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="oMCost"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CostPerHeatUnit"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.oMCost">
+            <xs:annotation>
+               <xs:documentation>Operating and maintenance cost for the thermal unit.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CAESPlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CAESPlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.CAESPlant">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may be a member of a compressed air energy storage plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CogenerationPlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CogenerationPlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.CogenerationPlant">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may be a member of a cogeneration plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="CombinedCyclePlant"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:CombinedCyclePlant"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.CombinedCyclePlant">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may be a member of a combined cycle plant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="HeatInputCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HeatInputCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.HeatInputCurve">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a heat input curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="HeatRateCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:HeatRateCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.HeatRateCurve">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a heat rate curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="IncrementalHeatRateCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:IncrementalHeatRateCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.IncrementalHeatRateCurve">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have an incremental heat rate curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ShutdownCurve"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:ShutdownCurve"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.ShutdownCurve">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a shutdown curve.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="StartupModel"
+                     minOccurs="1"
+                     maxOccurs="1"
+                     type="m:StartupModel"
+                     sawsdl:modelReference="http://iec.ch/TC57/CIM100#ThermalGeneratingUnit.StartupModel">
+            <xs:annotation>
+               <xs:documentation>A thermal generating unit may have a startup model.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="WindGenUnitKind"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#WindGenUnitKind">
+      <xs:annotation>
+         <xs:documentation>Kind of wind generating unit.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="offshore">
+            <xs:annotation>
+               <xs:documentation>The wind generating unit is located offshore.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+         <xs:enumeration value="onshore">
+            <xs:annotation>
+               <xs:documentation>The wind generating unit is located onshore.</xs:documentation>
+            </xs:annotation>
+         </xs:enumeration>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="WindGeneratingUnit"
+                   sawsdl:modelReference="http://iec.ch/TC57/CIM100#WindGeneratingUnit">
+      <xs:annotation>
+         <xs:documentation>A wind driven generating unit, connected to the grid by means of a rotating machine.  May be used to represent a single turbine or an aggregation.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="m:GeneratingUnit">
+            <xs:sequence>
+               <xs:element name="windGenUnitType"
+                           minOccurs="1"
+                           maxOccurs="1"
+                           type="m:WindGenUnitKind"
+                           sawsdl:modelReference="http://iec.ch/TC57/CIM100#WindGeneratingUnit.windGenUnitType">
+                  <xs:annotation>
+                     <xs:documentation>The kind of wind generating unit.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:simpleType name="Hours" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Hours">
+      <xs:annotation>
+         <xs:documentation>Time specified in hours.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="CostPerVolume"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CostPerVolume">
+      <xs:annotation>
+         <xs:documentation>Cost per unit volume.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="CostPerHeatUnit"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CostPerHeatUnit">
+      <xs:annotation>
+         <xs:documentation>Cost, in units of currency, per quantity of heat generated.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="CostRate"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CostRate">
+      <xs:annotation>
+         <xs:documentation>Cost, in units of currency, per elapsed time.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Seconds"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Seconds">
+      <xs:annotation>
+         <xs:documentation>Time, in seconds.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Emission"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Emission">
+      <xs:annotation>
+         <xs:documentation>Quantity of emission per fuel heat content.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Money" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Money">
+      <xs:annotation>
+         <xs:documentation>Amount of money.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:decimal"/>
+   </xs:simpleType>
+   <xs:simpleType name="Classification"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#Classification">
+      <xs:annotation>
+         <xs:documentation>Classification of level.  Specify as 1..n, with 1 being the most detailed, highest priority, etc as described on the attribute using this data type.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:integer"/>
+   </xs:simpleType>
+   <xs:simpleType name="PU" sawsdl:modelReference="http://iec.ch/TC57/CIM100#PU">
+      <xs:annotation>
+         <xs:documentation>Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="WaterLevel"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#WaterLevel">
+      <xs:annotation>
+         <xs:documentation>Reservoir water level referred to a given datum such as mean sea level.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="ActivePower"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivePower">
+      <xs:annotation>
+         <xs:documentation>Product of RMS value of the voltage and the RMS value of the in-phase component of the current.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Volume" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Volume">
+      <xs:annotation>
+         <xs:documentation>Volume.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="CostPerEnergyUnit"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#CostPerEnergyUnit">
+      <xs:annotation>
+         <xs:documentation>Cost, in units of currency, per quantity of electrical energy generated.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="Length" sawsdl:modelReference="http://iec.ch/TC57/CIM100#Length">
+      <xs:annotation>
+         <xs:documentation>Unit of length. It shall be a positive value or zero.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="PerCent"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#PerCent">
+      <xs:annotation>
+         <xs:documentation>Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="ActivePowerChangeRate"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#ActivePowerChangeRate">
+      <xs:annotation>
+         <xs:documentation>Rate of change of active power per time.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="HeatRate"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#HeatRate">
+      <xs:annotation>
+         <xs:documentation>Heat generated, in energy per time unit of elapsed time.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="RealEnergy"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#RealEnergy">
+      <xs:annotation>
+         <xs:documentation>Real electrical energy.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+   <xs:simpleType name="VolumeFlowRate"
+                  sawsdl:modelReference="http://iec.ch/TC57/CIM100#VolumeFlowRate">
+      <xs:annotation>
+         <xs:documentation>Volume per time.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:float"/>
+   </xs:simpleType>
+</xs:schema>
